@@ -1,92 +1,47 @@
-# Sophia.skill
+# Sophia Image Clarifier
 
-把用户脑子里模糊的画面和想法，变成清晰且 AI 完全意会的图片指令，大幅提升 AI 作图上限。
+Sophia Image Clarifier is a skill for users who want an image but cannot yet describe it clearly.
 
-## 它是什么
+It is not mainly a prompt-writing tool. It is a guided visual decision workflow that:
 
-Sophia.skill 是一个面向普通用户的 AI 生图顾问。  
-它不要求用户懂设计术语，也不要求用户自己写复杂提示词，而是通过多轮、好理解、带选项的提问，把一个模糊的想法一步步收束成高质量的图像指令，并尽量一次生成到位。
+- detects vague or under-specified image requests early
+- reduces user decision cost through short guided clarification
+- turns fuzzy aesthetic language into visible image decisions
+- shows a readable final visual brief before generation
+- outputs a generation-ready final prompt that stays faithful to the clarified brief
 
-它解决的不是“不会打字”，而是这些更常见的问题：
+## Best use cases
 
-- 脑子里有感觉，但说不清
-- 想要高级、温柔、电影感，却不知道怎么描述
-- 反复修改很累，越改越乱
-- 明明有参考图，但不知道该学它的哪一层
-- 不懂设计术语，和 AI 沟通成本很高
+- posters and campaign visuals
+- product hero images
+- social covers and thumbnails
+- portraits and character images
+- reference-led image creation
+- brand visuals and promo images
 
-## 适合谁
+## How it works
 
-Sophia.skill 主要适合这类用户：
+1. Detect that the image request is vague, emotional, or under-specified.
+2. Route the request into one dominant mode.
+3. Ask only the questions that materially change the image.
+4. Default aggressively when the user is unsure.
+5. Present a short final visual brief.
+6. Present one strong final prompt.
+7. Generate once if image generation is available.
 
-- 普通用户
-- 内容创作者
-- 品牌从业者
-- 产品运营
-- 小红书 / 社媒视觉创作者
-- 想做出更高质量图片，但不想硬学复杂 prompt 的人
+## Package structure
 
-它不是为专业设计师做的“术语工具”，而是一个更像顾问的图片工作流。
+- `SKILL.md`: trigger logic, workflow, rules, and output requirements
+- `SYSTEM_PROMPT.txt`: condensed execution behavior for skill-aligned agents
+- `references/question-flows.md`: mode-specific clarification flows
+- `references/reference-image-handling.md`: borrowing-boundary rules for reference-led work
+- `references/final-brief-template.md`: final brief and prompt structure
+- `references/quality-bar.md`: what good looks like
+- `references/examples.md`: mode-specific examples and dialogue anchors
+- `references/testing-checklist.md`: A/B checks, regression checks, and pass thresholds
 
-## 它怎么工作
+## Design goal
 
-Sophia.skill 的核心逻辑不是“先生成再返工”，而是：
-
-**先问清楚，再生成；尽量一次到位。**
-
-标准流程大致是：
-
-1. 判断这是什么类型的图  
-2. 判断整体方向  
-3. 判断最重要的主体  
-4. 判断更像真实拍摄还是设计表现  
-5. 判断颜色、光线、疏密和层次  
-6. 询问尺寸  
-7. 如果有参考图，拆清楚到底借哪一层  
-8. 在内部收束成一段成片级图像指令  
-9. 一次生成高质量图片  
-
-## 它的特点
-
-### 1. 说人话，不堆术语
-不会一上来就问用户“景别、机位、材质语言、色彩系统”这类让人发懵的话。
-
-### 2. 每轮都给选项
-尽量减少“你自己描述一下”的压力，帮助用户快速做选择。
-
-### 3. 每个关键问题都留自由补充口
-既有方向选项，也允许用户补一句自己的想法，不会把人困在固定答案里。
-
-### 4. 参考图可拆解
-不是只会说“参考这张图”，而是会继续拆到：
-- 借感觉
-- 借构图
-- 借颜色
-- 借光线
-- 借人物状态
-- 借质感
-- 借版式
-
-### 5. 追求一次高质量生成
-通过 4–8 轮精细化收束，把模糊想法整理成 AI 更容易执行的图片说明，减少返工和牵一发而动全身的问题。
-
-## 支持的图片类型
-
-当前优先支持：
-
-- 海报 / 封面
-- 产品宣传图
-- App 展示图
-- 人物写真 / 角色图
-- 场景氛围图
-- 小红书封面 / 社媒首图
-- 品牌主视觉
-- 参考图再创作 / 借鉴类图片
-
-## 示例：它最终会把模糊想法收束到什么程度
-
-Sophia.skill 的目标，不是停留在“高级一点”“温柔一点”这种模糊层级，而是尽量收束到这种完成度：
-
->Eg:竖版品牌海报，主视觉为一部悬浮手机与多层半透明功能卡片，偏 editorial app showcase 风格，画面克制、留白充足、暖米白与雾粉色主调，晨雾感柔光，轻玻璃拟态与高级产品渲染结合，主体居中偏下，顶部预留品牌标题区，整体强调温柔、可信赖、成熟、非廉价科技感，避免赛博朋克、避免过度商业硬广、避免低质图标与过饱和 UI。
+The goal is not to ask more questions. The goal is to help a user get to a stronger image with less friction and less guesswork.
 
 
