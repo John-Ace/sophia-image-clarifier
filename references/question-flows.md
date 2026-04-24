@@ -1,180 +1,87 @@
 # Question Flows
 
-This reference file contains detailed clarification flows for Sophia Skill.
+## Purpose
 
-## Universal opening flow
+These are the default clarification flows for each mode. They are not scripts. They are the shortest reliable decision paths.
 
-### Step 1: Image type
+## Product image
 
-Ask: “What kind of image are we making?”
+Ask in this order:
 
-Options:
+1. What is the hero object
+2. What finish or material should it feel like
+3. What viewing angle or presentation should dominate
+4. How simple or designed should the background be
+5. What aspect ratio matters if this is a commercial placement
 
-- Poster / cover
-- Product promotional image
-- App showcase image
-- Portrait / character image
-- Scene / mood image
-- Social media cover / post visual
-- Brand key visual
-- I am not sure — please help me decide
-- Other — I will describe it
+Do not drift into poster or lifestyle questions unless the user clearly wants that.
 
-### Step 2: Use case
+## Poster or campaign visual
 
-Ask: “Where will this image mainly be used?”
+Ask in this order:
 
-Options:
+1. What is the dominant subject
+2. How dramatic or restrained should it feel
+3. Should the composition feel centered, cinematic, layered, or cleaner
+4. Does the image need title space or breathing room
+5. What color and lighting direction should dominate
 
-- Social media post
-- App store / product showcase
-- Website hero image
-- Brand campaign
-- Presentation / internal concept
-- Poster / print-style visual
-- Personal creative image
-- I am not sure — please choose the most suitable direction
-- Other — I will describe it
+## Social cover
 
-### Step 3: Main subject
+Ask in this order:
 
-Ask: “What should people notice first in the image?”
+1. What should be obvious within one second
+2. Does the cover need crop safety for a platform or small screen
+3. Where should the readable title or overlay-safe area be
+4. Should the look feel cleaner, warmer, trendier, or more restrained
+5. What ratio matters
 
-Options:
+## Portrait or character
 
-- A person
-- A product
-- A phone / app interface
-- A scene or environment
-- A title or text layout
-- The overall mood
-- I am not sure — please help me decide
-- Other — I will add my own idea
+Ask in this order:
 
-### Step 4: Overall direction
+1. What emotional read should come first
+2. How should the subject present themselves
+3. Should styling stay restrained or become stronger
+4. How present should the background be
+5. What palette and lighting reinforce the emotion
 
-Ask: “What overall feeling should the image have?”
+## Reference-led image
 
-Options:
+Ask in this order:
 
-- Clean and premium
-- Warm and approachable
-- Cinematic and emotional
-- Strong and eye-catching
-- Minimal and refined
-- Futuristic but not cheap
-- Editorial and brand-like
-- I am not sure — please choose for me
-- Other — I will describe it
+1. What should be borrowed
+2. What should not be borrowed
+3. What is the new subject
+4. What part of the new image must feel original
+5. Whether composition, color, mood, or lighting remains primary
 
-### Step 5: Visual form
+## Fast mode
 
-Ask: “Should this image feel more like which of these?”
+Use when:
 
-Options:
+- the user wants speed
+- the user is casual
+- the request is not high-stakes
 
-- A realistic photo
-- A premium brand poster
-- An app showcase visual
-- A cinematic still
-- An illustration or painting
-- A 3D / concept visual
-- A social media cover
-- I am not sure — please decide based on the idea
-- Other — I will describe it
+Aim for:
 
-### Step 6: Color and lighting
+- 2 to 4 rounds
+- only major variables
+- stronger defaults
 
-Ask: “What color and lighting direction feels closest?”
+## Director mode
 
-Options:
+Use when:
 
-- Warm, soft, and comfortable
-- Cool, clean, and premium
-- Neutral, restrained, and elegant
-- Bright and fresh
-- Dark and cinematic
-- Soft morning light / misty light
-- Dramatic lighting with stronger contrast
-- I am not sure — please choose the best fit
-- Other — I will describe it
+- the work is commercial
+- the work is brand-sensitive
+- the request is reference-sensitive
+- precision clearly matters
 
-### Step 7: Layout and visual density
+Aim for:
 
-Ask: “How much should be happening in the image?”
+- 4 to 8 rounds
+- deeper refinement
+- still stop when the completion gate is satisfied
 
-Options:
-
-- Very simple, with lots of empty space
-- Richer, but still organized
-- Strong focus on one main subject
-- Layered, with several supporting elements
-- More scene-based and atmospheric
-- More information-heavy, like a product overview
-- I am not sure — please decide
-- Other — I will add my preference
-
-### Step 8: Size or aspect ratio
-
-Always ask about size or aspect ratio.
-
-Ask: “What size or format do you need?”
-
-Options:
-
-- Vertical, good for mobile viewing
-- Horizontal, good for websites or banners
-- Square, good for social media
-- Tall vertical, good for long posters or app visuals
-- I have a specific ratio or size
-- I am not sure — please choose the most suitable format
-
-## Product image flow
-
-Use for phones, apps, devices, software, consumer products, and product campaigns.
-
-Key questions:
-
-1. Is this more like a product poster, app showcase, website hero, or social media promo?
-2. Should the product itself be the main hero, or should the product experience/function be the hero?
-3. Should the image feel like a real studio product shot, an Apple-style campaign, an app store visual, or a social media ad?
-4. Should the image be simple with premium negative space, or layered with feature cards and supporting elements?
-5. What feature must be emphasized most?
-6. What size or aspect ratio is needed?
-
-## Portrait / character image flow
-
-Use for human subjects, portraits, character images, or emotional persona visuals.
-
-Key questions:
-
-1. Should the image feel natural, editorial, cinematic, fashion-like, or illustrated?
-2. What matters most: face, expression, outfit, body pose, environment, or mood?
-3. Should it be close-up, half-body, full-body, or environmental portrait?
-4. Should the mood be calm, confident, vulnerable, mysterious, powerful, or warm?
-5. What kind of lighting and color should support that mood?
-6. What size or aspect ratio is needed?
-
-## Scene / mood image flow
-
-Use for interiors, landscapes, emotional spaces, conceptual scenes, or atmosphere-first images.
-
-Key questions:
-
-1. Should the scene feel real, cinematic, illustrated, dreamlike, or conceptual?
-2. What matters most: light, color, space, details, or overall atmosphere?
-3. Should it feel simple and airy, detailed and rich, quiet and lonely, warm and healing, or mysterious?
-4. Should the environment look lived-in, pristine, surreal, or brand-like?
-5. What size or aspect ratio is needed?
-
-## Social media visual flow
-
-Use for covers, thumbnail-like visuals, Xiaohongshu images, Instagram posts, or social-first visuals.
-
-Key questions:
-
-1. Is this a cover image, social post, product promo, opinion visual, or mood visual?
-2. Should the first impression be eye-catching, premium, emotional, clear, or provocative?
-3. Is the title/text the main hook, or is the image subject the main hook?
-4. Should the design feel clean and high-end, or more expressive and social-native?
-5. What size or aspect ratio is needed?
