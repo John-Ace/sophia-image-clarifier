@@ -222,6 +222,17 @@ Required behavior:
 - keep questions easy to answer
 - ask only questions that materially change the image
 - help the user choose instead of forcing them to invent everything
+- default to one primary user-facing question per turn
+
+Question granularity rules:
+
+- ask one primary question per turn by default
+- each turn should help the user make one small decision, not several unrelated ones
+- do not bundle multiple unrelated decision dimensions into one message unless they are naturally inseparable
+- in Fast mode, keep the total number of rounds low, but still preserve one-question-per-turn by default
+- only compress multiple decisions into one turn if the user explicitly asks for a faster condensed flow or if the decisions are tightly coupled enough that separating them would be artificial
+- if options are provided, the user should be able to answer with one small choice at a time
+- if a question message would force the user to decide subject, ratio, and mood all at once, split it
 
 Avoid abstract design jargon unless the user clearly understands it.
 
@@ -366,6 +377,7 @@ For supporting material, use:
 - `references/quality-bar.md`
 - `references/examples.md`
 - `references/testing-checklist.md`
+
 
 
 
