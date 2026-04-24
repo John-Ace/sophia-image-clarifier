@@ -1,60 +1,63 @@
 # Testing Checklist
 
-Before public release, test Sophia Skill with both positive and negative cases.
+## Purpose
 
-## Positive test cases
+Use this checklist to verify that Sophia Image Clarifier is meaningfully better than a no-skill baseline and remains stable across revisions.
 
-Sophia Skill should activate for requests like:
+## A/B method
 
-- “I want to create a premium product poster but I only have a rough idea.”
-- “Help me make a high-end app showcase image.”
-- “I want to use this reference image’s composition for a new poster.”
-- “I want a cinematic portrait, but I do not know how to describe it.”
-- “I want to make a social media cover image that looks more professional.”
-- “I want to generate a healing scene image, but not too cartoonish.”
-- “I want to create a poster, but please ask me questions first.”
-- “I do not know how to write the prompt.”
+For each case:
 
-## Negative test cases
+- A = baseline without this skill
+- B = run with this skill
 
-Sophia Skill should not activate for:
+Keep these constant:
 
-- “Fix this Python bug.”
-- “Summarize this article.”
-- “Write a README.”
-- “Create a PowerPoint.”
-- “Translate this paragraph.”
-- “Edit this spreadsheet.”
-- “Write social media copy only.”
-- “Review this contract.”
+- same image model
+- same initial user request
+- same aspect ratio unless the flow intentionally changes it
+- same seed when available
 
-## Passing criteria
+## Core test cases
 
-A good test run should show that the skill:
+- vague product visual
+- fast social cover
+- reference image with color-only borrowing
+- user says "you choose" repeatedly
+- contradictory adjective request
+- portrait with subtle futurism
+- text-sensitive poster
+- unknown-model reusable prompt
 
-- activates for vague image requests
-- does not activate for non-image tasks
-- asks 4 to 8 useful clarification rounds in vague cases
-- uses options and plain language
-- asks for size or aspect ratio
-- properly handles reference images
-- translates vague words into concrete image language
-- outputs a final image instruction that feels like a complete visual brief
+## What to verify
 
-## Scorecard
+- correct mode routing
+- proportional clarification depth
+- strong default behavior when the user is unsure
+- final visual brief shown before the prompt
+- final prompt stays loyal to the brief
+- no anti-drift violation
+- no obvious failure mode such as over-questioning, vague prompt language, or loose reference borrowing
 
-Use a 0-2 scale for each category.
+## Prompt quality checks
 
-| Category | 0 | 1 | 2 |
-|---|---|---|---|
-| Trigger accuracy | Wrong or no trigger | Partial trigger | Correct trigger |
-| Question quality | Abstract or confusing | Usable | Clear, option-based, plain language |
-| Workflow compliance | Skips key steps | Partially follows | Follows clarification, size, reference rules |
-| Final brief quality | Generic | Some detail | Complete visual brief |
-| Boundary control | Misfires on non-image tasks | Occasional issues | Correctly limited to image tasks |
+The prompt passes only if:
 
-Recommended threshold:
+- the main subject is unmistakable
+- vague mood words are translated into visible image decisions
+- there is no obvious contradiction
+- no new major subject, setting, or style axis appears after clarification
+- the prompt is still reusable in another model with minimal editing
 
-- 8/10 or higher: acceptable for v0.1
-- 9/10 or higher: ready for broader sharing
-- Average 8.5+ across at least 10 cases: consider v1.0
+## Pass threshold
+
+Treat the skill as materially better only if:
+
+- it wins most core A/B cases
+- it reduces or matches baseline rework in most cases
+- it shows a consistent final brief and final prompt
+- it does not repeatedly violate anti-drift or conflict-resolution rules
+
+## Regression reminder
+
+Re-run the same core cases after any meaningful change to the skill package. If a newer version performs worse on these fixed cases, treat that as regression even if the rules look smarter on paper.
