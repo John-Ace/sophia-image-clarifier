@@ -232,36 +232,73 @@ The final visual brief should:
 
 The final visual brief appears once.
 
-## Phase 5: Final prompt
+## Phase 5: Draft final prompt
 
-Only after the final visual brief, output one final high-quality prompt.
+Only after the final visual brief, build one draft final prompt.
 
-Prompt rules:
+Draft prompt rules:
 
-- the prompt must be based on the clarified decisions
-- the prompt must follow the final visual brief
-- the prompt must not introduce a new subject, setting, prop, or style axis
-- the prompt must default to the user's language
-- if the user is using Chinese, output the prompt in Chinese
-- if the user is using English, output the prompt in English
+- the draft prompt must be based on the clarified decisions
+- the draft prompt must follow the final visual brief
+- the draft prompt must not introduce a new subject, setting, prop, or style axis
+- the draft prompt must default to the user's language
+- if the user is using Chinese, write the draft prompt in Chinese
+- if the user is using English, write the draft prompt in English
 - if the user is using another language, default to that language when feasible
 - do not default to English for non-English users unless explicitly requested
 
-The final prompt appears once.
+Do not show the draft prompt to the user.
 
-## Phase 6: Generation
+## Phase 6: Prompt execution audit
+
+After the draft final prompt is built, run one hidden prompt execution audit before generation.
+
+Audit goal:
+
+- improve model execution success and stability
+- remove avoidable prompt friction
+- preserve the confirmed creative direction
+
+Allowed audit actions:
+
+- remove repetition
+- merge overlapping constraints
+- reduce non-essential over-specification
+- lower model-risky combinations when they are not core user-confirmed requirements
+- simplify wording that adds noise without changing the intended image
+- preserve reasonable creative freedom for the model
+
+Forbidden audit actions:
+
+- change the confirmed main subject
+- change the use case
+- change the confirmed primary style direction
+- add a new major prop, setting, or story axis
+- delete user-confirmed core decisions
+- silently switch to a different concept
+
+User-facing rule:
+
+- do not show both prompt versions
+- do not explain the hidden draft prompt
+- only say briefly that the prompt was optimized for generation stability when relevant
+- then show one final prompt only
+
+## Phase 7: Final prompt and generation
 
 Generation happens only after:
 
 1. coverage audit passed
 2. final visual brief was shown
-3. final prompt was shown
+3. the hidden prompt execution audit finished
+4. one final prompt was shown
 
-Generation rules:
+Final prompt and generation rules:
 
+- show only the audited final prompt
 - generate from the exact shown final prompt
-- do not generate from a hidden rewritten variant
-- if the prompt changes, show the adjusted final prompt first
+- do not show the pre-audit draft prompt
+- do not generate from a different hidden rewritten variant
 - if image generation is available, do not stop at the prompt stage
 - once the final prompt is shown, continue to image generation in the same run
 - only stop at the prompt stage if image generation is unavailable or the user explicitly asks for prompt-only output
@@ -360,7 +397,6 @@ Use supporting material from:
 - `references/quality-bar.md`
 - `references/examples.md`
 - `references/testing-checklist.md`
-
 
 
 
